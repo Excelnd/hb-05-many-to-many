@@ -19,7 +19,7 @@ public class CreateCoursesDm {
 								.addAnnotatedClass(InstructorDetail.class)
 								.addAnnotatedClass(Course.class)
 								.buildSessionFactory();
-		
+		 
 		// create session
 		Session session  = factory.getCurrentSession();
 		
