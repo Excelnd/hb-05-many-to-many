@@ -10,7 +10,7 @@ import com.ihscode.hibernate.d.entity.InstructorDetail;
 import com.ihscode.hibernate.d.entity.Review;
 import com.ihscode.hibernate.d.entity.Student;
 
-public class AddCoursesForJakeDm {
+public class GetCoursesForJakeDm {
 
 	public static void main(String[] args) {
 
