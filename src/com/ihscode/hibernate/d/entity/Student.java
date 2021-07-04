@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -32,7 +32,7 @@ public class Student {
 	@Column(name="email")
 	private String email;
 	
-	@ManyToOne(fetch=FetchType.LAZY,
+	@ManyToMany(fetch=FetchType.LAZY,
 			cascade={CascadeType.PERSIST, CascadeType.MERGE,
 			 CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinTable(

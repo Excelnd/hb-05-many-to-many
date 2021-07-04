@@ -36,17 +36,25 @@ public class CreateCourseAndStudentsDm {
 			// create a course
 			Course tempCourse = new Course("Doom - How To Score One Million Points");
 			
-			// add some reviews
-			tempCourse.addReview(new Review("Greate Course ... loved it!"));
-			tempCourse.addReview(new Review("What a Dumb course, you are an idiot!"));
-			tempCourse.addReview(new Review("Cool nice course, well done"));
+			// save the course
+			System.out.println("\nSaving the course ...");
+			session.save(tempCourse);
+			System.out.println("Saved the course: " + tempCourse);
 			
-			// save the course... and leverage the cascade all
-			System.out.println("Saving the course");
-			System.out.println(tempCourse);
-			System.out.println(tempCourse.getReviews());
+			// create the students
+			Student tempStudentOne = new Student("Jason", "Kal", "jason@ihscoding.com");
+			Student tempStudentTwo = new Student("Jake", "gyl", "jake@ihscoding.com");			
 			
-			session.save(tempCourse); 
+			// add students to the course
+			tempCourse.addStudent(tempStudentOne);
+			tempCourse.addStudent(tempStudentTwo);
+			
+			// save the students
+			System.out.println("\nSaving stduents ...");
+			session.save(tempStudentOne);
+			session.save(tempStudentTwo);
+			System.out.println("Save students: " + tempCourse.getStudents());
+
 			
 			// commit transaction
 			session.getTransaction().commit();
