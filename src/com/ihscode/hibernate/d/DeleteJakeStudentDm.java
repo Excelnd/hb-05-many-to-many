@@ -10,7 +10,7 @@ import com.ihscode.hibernate.d.entity.InstructorDetail;
 import com.ihscode.hibernate.d.entity.Review;
 import com.ihscode.hibernate.d.entity.Student;
 
-public class GetCoursesForJakeDm {
+public class DeleteJakeStudentDm {
 
 	public static void main(String[] args) {
 
@@ -34,11 +34,15 @@ public class GetCoursesForJakeDm {
 			session.beginTransaction();
 			
 			// get the students Jake from database
-			int studentId = 1;
+			int studentId = 2;
 			Student tempStudent = session.get(Student.class, studentId);
 			
 			System.out.println("\nLoaded stduent: " + tempStudent);
 			System.out.println("Courses: " + tempStudent.getCourses());
+			
+			// delete student
+			System.out.println("\nDeleting student: " + tempStudent);
+			session.delete(tempStudent);
 			
 			// commit transaction
 			session.getTransaction().commit();
